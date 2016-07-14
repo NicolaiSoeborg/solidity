@@ -5,7 +5,7 @@ ContractPart = StateVariableDeclaration | StructDefinition | ModifierDefinition 
 
 InheritanceSpecifier = Identifier ( '(' Expression ( ',' Expression )* ')' )?
 StructDefinition = 'struct' Identifier '{'
-                     ( VariableDeclaration (';' VariableDeclaration)* )? '}
+                     ( VariableDeclaration (';' VariableDeclaration)* )? '}'
 StateVariableDeclaration = TypeName ( 'public' | 'inheritable' | 'private' )? Identifier ';'
 ModifierDefinition = 'modifier' Identifier ParameterList? Block
 FunctionDefinition = 'function' Identifier ParameterList
@@ -44,5 +44,5 @@ Assignment = Expression (AssignmentOp Expression)
 FunctionCall = Expression '(' Expression ( ',' Expression )* ')'
 NewExpression = 'new' Identifier
 MemberAccess = Expression '.' Identifier
-IndexAccess = Expression '[' (Expresison)? ']'
+IndexAccess = Expression '[' (Expression)? ']'
 PrimaryExpression = Identifier | NumberLiteral | StringLiteral | ElementaryTypeName | '(' Expression ')'
